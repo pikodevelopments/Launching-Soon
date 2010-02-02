@@ -1,6 +1,6 @@
 h1. LaunchingSoon
 
-Launching soon is a plugin that helps rails projects to manage a dedicated launching soon page before the actual launch date. The plugin also collects email from potential customers.
+Launching soon is a plugin (Rails Engine) that helps rails projects to manage a dedicated launching soon page before the actual launch date. The plugin also collects email from potential customers.
 
 Options available to store subscriber's email addresses are:
 
@@ -69,27 +69,7 @@ Example configuration (RAILS_ROOT/config/launching_soon.yml)
 
 h2. Usage
 
-Step 1 : Include the LaunchingSoon in ApplicationController:
-<pre><code>
-class ApplicationController < ActionController::Base
-  include LaunchingSoon # if Rails.env.development?
-  ...
-end
-</code></pre>
-
-Step 2 : Add following routes to your applications routes.rb
-<pre><code>
-ActionController::Routing::Routes.draw do |map|
-  map.resources :news_letter_subscribers, :only => [:create]
-	...
-end
-
-OR, alternatively run the following command
-
-ruby script/generate launching_soon_routes
-</code></pre>
-
-Step 3 : Generate migration to add news_letter_subscribers table
+Step 1 : Generate migration to add news_letter_subscribers table
 <pre><code>
 class CreateNewsLetterSubscribers < ActiveRecord::Migration
   def self.up
