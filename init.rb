@@ -1,3 +1,5 @@
+require 'launching_soon'
+
 require 'dispatcher'
 
 Dispatcher.to_prepare :launching_soon do

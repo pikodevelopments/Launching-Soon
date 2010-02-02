@@ -50,13 +50,7 @@ module LaunchingSoon
   # This will render the launching soon page from views/LAUNCHING_SOON_CONFIG[:html_file_name]) path (eg. app/views/launching_soon/default.html.erb)
   # with a css file from public/stylesheets/LAUNCHING_SOON_CONFIG[:css_file_name] path (eg. public/stylesheets/launching_soon.css).
   def setup_launching_soon_page
-    @css_file = LAUNCHING_SOON_CONFIG[:css_file_name]
-    @launching_date = if Time.zone
-                        Time.zone
-                      else
-                        Time
-                      end.parse(LAUNCHING_SOON_CONFIG[:launching_date]).utc
-    render :template => File.join('launching_soon', LAUNCHING_SOON_CONFIG[:html_file_name]), :layout => "launching_soon"
+    redirect_to(:controller => 'news_letter_subscribers', :action => 'index')
   end
   
 end
