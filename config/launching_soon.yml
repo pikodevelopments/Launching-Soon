@@ -6,6 +6,7 @@ development:
   campaign_monitor_list_id:
   mail_chimp_api_key:
   mail_chimp_list_id:
+  mail_chimp_interests:
   csv_file_name: data.csv
   launching_date: July 9, 2020 00:00:00
 
@@ -17,6 +18,7 @@ test:
   campaign_monitor_list_id:
   mail_chimp_api_key:
   mail_chimp_list_id:
+  mail_chimp_interests:
   csv_file_name: data.csv
   launching_date: July 9, 2020 00:00:00
 
@@ -28,5 +30,6 @@ production:
   campaign_monitor_list_id:
   mail_chimp_api_key:
   mail_chimp_list_id:
+  mail_chimp_interests:
   csv_file_name: data.csv
   launching_date: July 9, 2020 00:00:00
