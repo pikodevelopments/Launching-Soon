@@ -15,7 +15,7 @@ class NewsLetterSubscribersController < ActionController::Base
   
   # This will write a valid email address to LAUNCHING_SOON_CONFIG[:csv_file_name] file (eg. public/data.csv).
   def create
-    @nls = LaunchingSoon::NewsLetterSubscriber.new(:email => params[:email])
+    @nls = LaunchingSoon::NewsLetterSubscriber.new(:email => params[:email], :request => request)
     respond_to do |format|
       format.html { render :nothing => true }
       format.js do

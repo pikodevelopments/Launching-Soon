@@ -5,6 +5,7 @@ class LaunchingSoon::NewsLetterSubscriber < ActiveRecord::Base
   validates_format_of :email, :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/
   attr_accessor_with_default :store_to_db, false
 
+  attr_accessor :request
   alias :original_save :save
   
   def valid?
@@ -56,7 +57,8 @@ class LaunchingSoon::NewsLetterSubscriber < ActiveRecord::Base
     chimpApi ||= XMLRPC::Client.new2("http://api.mailchimp.com/1.2/")
 
     begin
-      chimpApi.call("listSubscribe", @mail_chimp_api_key, @mail_chimp_list_id, email, {'INTERESTS' => LAUNCHING_SOON_CONFIG[:mail_chimp_interests]}, 'html', false, true, true)
+      remote_ip = request.ip if request && request.ip
+      chimpApi.call("listSubscribe", @mail_chimp_api_key, @mail_chimp_list_id, email, {'INTERESTS' => LAUNCHING_SOON_CONFIG[:mail_chimp_interests], 'OPTINIP' => remote_ip}, 'html', true, true, true)
     rescue Exception => e
       self.errors.add_to_base(e.message + " (MailChimp)")
     end
