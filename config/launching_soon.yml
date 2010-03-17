@@ -1,6 +1,7 @@
 development:
   css_file_name: launching_soon.css
   html_file_name: default.html.erb
+  layout_file_name: launching_soon.html.erb
   option_to_store_email: csv
   campaign_monitor_api_key:
   campaign_monitor_list_id:
@@ -13,6 +14,7 @@ development:
 test:
   css_file_name: launching_soon.css
   html_file_name: default.html.erb
+  layout_file_name: launching_soon.html.erb
   option_to_store_email: csv
   campaign_monitor_api_key:
   campaign_monitor_list_id:
@@ -25,6 +27,7 @@ test:
 production:
   css_file_name: launching_soon.css
   html_file_name: default.html.erb
+  layout_file_name: launching_soon.html.erb
   option_to_store_email: csv
   campaign_monitor_api_key:
   campaign_monitor_list_id:

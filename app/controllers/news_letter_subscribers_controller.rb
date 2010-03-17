@@ -9,7 +9,7 @@ class NewsLetterSubscribersController < ActionController::Base
                       else
                         Time
                       end.parse(::LAUNCHING_SOON_CONFIG[:launching_date]).utc
-    render :template => File.join('launching_soon', ::LAUNCHING_SOON_CONFIG[:html_file_name]), :layout => "launching_soon"
+    render :template => File.join('launching_soon', ::LAUNCHING_SOON_CONFIG[:html_file_name]), :layout => ::LAUNCHING_SOON_CONFIG[:layout_file_name]
   end
   
   
