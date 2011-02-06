@@ -5,8 +5,9 @@ puts 'Copying javascripts'
 FileUtils.cp File.join(File.dirname(__FILE__), 'public', 'javascripts', 'countdown.js'),  File.join(RAILS_ROOT,  'public', 'javascripts')
 puts 'Copying config file'
 FileUtils.cp File.join(File.dirname(__FILE__), 'config', 'launching_soon.yml'), File.join(RAILS_ROOT, 'config')
-puts 'Copying views'
+puts 'Copying view 1 of 2'
 FileUtils.cp File.join(File.dirname(__FILE__), 'app', 'views', 'layouts', 'launching_soon.html.erb'), File.join(RAILS_ROOT, 'app', 'views', 'layouts')
+puts 'Copying view 2 of 2'
 FileUtils.cp File.join(File.dirname(__FILE__), 'app', 'views', 'default.html.erb'), FileUtils.mkdir_p(File.join(RAILS_ROOT,  'app', 'views',  'launching_soon'))
 puts 'Copying images'
 destination = File.join(RAILS_ROOT, 'public/images/launching_soon')
